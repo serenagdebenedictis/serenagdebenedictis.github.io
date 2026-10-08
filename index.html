@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Serena Grazia De Benedictis — Profile</title>
-  <meta name="description" content="Profile and research page of Serena Grazia De Benedictis — PhD student in Computer Science and Mathematics." />
+  <meta name="description" content="Profile and research page of Serena Grazia De Benedictis — PhD candidate in Computer Science and Mathematics, University of Bari Aldo Moro. Topological data analysis, optimization and machine learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg: #fff9f9;
@@ -13,32 +16,96 @@
       --burgundy-700: #800020;
       --burgundy-600: #b22222;
       --muted: #f5f0f0;
+      --line: rgba(128,0,32,0.10);
       --text: #341e1e;
-      --card-shadow: 0 6px 18px rgba(76,0,19,0.08);
+      --soft: #6b4a4a;
+      --card-shadow: 0 6px 18px rgba(76,0,19,0.07);
       --radius: 12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --serif: "EB Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--muted),var(--bg));color:var(--text);-webkit-font-smoothing:antialiased}
-    .container{max-width:1080px;margin:36px auto;padding:24px}
-    .hero{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:16px;overflow:hidden;flex-shrink:0;border:4px solid rgba(128,0,32,0.08);background:linear-gradient(135deg,var(--burgundy-700),var(--burgundy-800));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .title{display:flex;flex-direction:column;gap:6px}
-    h1{margin:0;font-size:1.8rem}
-    .subtitle{margin:0;color:var(--burgundy-800);font-weight:600}
-    .meta{color:#6b4a4a;font-size:0.95rem}
-    .grid {display: flex;flex-direction: column;gap: 20px;margin-top: 22px;}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),var(--bg) 420px);color:var(--text);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:var(--burgundy-700)}
+    a:hover{color:var(--burgundy-600)}
+    .container{max-width:1120px;margin:0 auto;padding:40px 24px}
 
-    .card{background:#fff;border-radius:var(--radius);padding:18px;box-shadow:var(--card-shadow);margin-bottom:16px}
-    .section-title{font-weight:700;color:var(--burgundy-700);margin-bottom:8px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap}
-    .chip{background:linear-gradient(180deg,#fff,#f8f6f6);padding:6px 10px;border-radius:999px;border:1px solid rgba(128,0,32,0.06);font-size:0.85rem}
-    ul.pub{padding-left:16px;margin:8px 0}
-    ul.pub li{margin-bottom:10px}
-    .contact a{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--burgundy-700);color:#fff;text-decoration:none;font-weight:600}
-    footer{margin-top:28px;text-align:center;color:#7a4f4f;font-size:0.9rem}
-    @media (max-width:900px){.grid{grid-template-columns:1fr;}.hero{grid-template-columns:96px 1fr}}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:128px 1fr;gap:26px;align-items:center;padding-bottom:26px;border-bottom:1px solid var(--line)}
+    .avatar{position:relative;width:128px;height:128px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,var(--burgundy-700),var(--burgundy-900));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:2.4rem;font-weight:600;box-shadow:var(--card-shadow)}
+    .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-family:var(--serif);font-weight:600;font-size:2.4rem;line-height:1.1;color:var(--burgundy-900)}
+    .subtitle{margin:6px 0 0;color:var(--burgundy-800);font-weight:600}
+    .meta{margin:2px 0 0;color:var(--soft)}
+    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .links a{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--burgundy-800);text-decoration:none;font-size:0.85rem;font-weight:500;transition:background .15s,color .15s}
+    .links a:hover{background:var(--burgundy-700);color:#fff}
+    .links a.primary{background:var(--burgundy-700);color:#fff;border-color:var(--burgundy-700)}
+    .links a.primary:hover{background:var(--burgundy-900)}
+    .links svg{width:14px;height:14px;fill:currentColor}
+
+    /* Layout */
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px;margin-top:26px;align-items:start}
+    main{min-width:0}
+    aside{position:sticky;top:20px}
+    .card{background:#fff;border-radius:var(--radius);padding:20px 22px;box-shadow:var(--card-shadow);margin-bottom:18px}
+    .section-title{margin:0 0 10px;font-family:var(--serif);font-weight:600;font-size:1.45rem;color:var(--burgundy-700)}
+    h4{margin:16px 0 6px;font-size:0.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
+    p{margin:0 0 10px}
+    ul.pub{padding-left:18px;margin:6px 0}
+    ul.pub li{margin-bottom:9px}
+    ul.pub li::marker{color:var(--burgundy-700)}
+
+    /* News */
+    .news{list-style:none;padding:0;margin:0}
+    .news li{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+    .news li:first-child{border-top:0}
+    .news .date{font-weight:600;color:var(--burgundy-800);font-size:0.88rem;white-space:nowrap}
+
+    /* Chips */
+    .chips{display:flex;gap:7px;flex-wrap:wrap}
+    .chip{background:var(--muted);padding:4px 10px;border-radius:999px;font-size:0.82rem;color:var(--burgundy-900)}
+
+    /* Publications */
+    .pubs{list-style:none;padding:0;margin:0}
+    .pubs li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+    .pubs li:first-child{border-top:0;padding-top:4px}
+    .tag{display:inline-flex;align-items:center;justify-content:center;width:30px;height:24px;border-radius:6px;font-size:0.75rem;font-weight:700;color:#fff;margin-top:2px}
+    .tag.j{background:var(--burgundy-700)}
+    .tag.c{background:#a8434f}
+    .tag.s{background:#fff;color:var(--burgundy-700);border:1.5px solid var(--burgundy-700)}
+    .tag.t{background:var(--muted);color:var(--soft)}
+    .ptitle{display:block;font-weight:600;color:var(--text);line-height:1.4}
+    .pauth{display:block;font-size:0.9rem;color:var(--soft)}
+    .pauth b{color:var(--text);font-weight:600}
+    .pvenue{display:block;font-size:0.9rem;font-style:italic;color:var(--soft)}
+    .plinks{display:flex;gap:6px;margin-top:6px}
+    .plinks a{font-size:0.75rem;font-weight:600;text-decoration:none;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--burgundy-700)}
+    .plinks a:hover{background:var(--burgundy-700);color:#fff}
+
+    /* Badges in talks */
+    .badge{display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:999px;margin-right:4px;vertical-align:1px}
+    .badge.inv{background:var(--muted);color:var(--burgundy-800)}
+    .badge.award{background:var(--burgundy-700);color:#fff}
+
+    /* Sidebar */
+    aside .card p{font-size:0.92rem}
+    .side-label{display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin-bottom:2px}
+
+    footer{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);text-align:center;color:#7a4f4f;font-size:0.85rem}
+
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      aside{position:static}
+    }
+    @media (max-width:560px){
+      .container{padding:24px 16px}
+      .hero{grid-template-columns:1fr;text-align:left}
+      .avatar{width:96px;height:96px;font-size:1.8rem}
+      h1{font-size:1.9rem}
+      .news li{grid-template-columns:1fr;gap:0}
+    }
   </style>
 </head>
 <body>
@@ -46,230 +113,266 @@
 
     <!-- Hero -->
     <header class="hero">
-      <div class="avatar">
-        <img src="foto_cv.png" alt="Serena Grazia De Benedictis" onerror="this.style.display='none'">
-      </div>
-      <div class="title">
+      <div class="avatar">SG<img src="foto_cv.png" alt="Serena Grazia De Benedictis" onerror="this.remove()"></div>
+      <div>
         <h1>Serena Grazia De Benedictis</h1>
-        <p class="subtitle">PhD Student — Computer Science & Mathematics (XXXIX cycle)</p>
-        <p class="meta">University of Bari Aldo Moro</p>
+        <p class="subtitle">PhD Candidate — Computer Science &amp; Mathematics (XXXIX cycle)</p>
+        <p class="meta">Department of Mathematics, University of Bari Aldo Moro</p>
+        <nav class="links" aria-label="Profiles">
+          <a class="primary" href="mailto:serena.debenedictis@uniba.it"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 2.8-8 5-8-5V17h16V9.8z"/></svg>Email</a>
+          <a href="https://scholar.google.com/citations?user=Co1kw0IAAAAJ&hl=it&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/0009-0001-0270-5560" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=59360399400" target="_blank" rel="noopener">Scopus</a>
+          <a href="https://www.linkedin.com/in/serena-de-benedictis/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.researchgate.net/profile/Serena-De-Benedictis" target="_blank" rel="noopener">ResearchGate</a>
+        </nav>
       </div>
     </header>
 
-    <main class="grid">
+    <div class="layout">
+      <main>
 
-      <!-- Main content -->
-      <section class="card">
-        <h2 class="section-title">About</h2>
-        <p>I am a Ph.D. student at the Department of Mathematics, University of Bari Aldo Moro, and a member of the MIDAS Research Group. My research focuses on topological data analysis, optimization, computational geometry, and machine learning.</p>
-        <p>PhD project: <strong>Topological Data Analysis and Optimization for Industrial Processes</strong> (D.M.117/23 co-financed by Pirelli Tyre S.p.A.)</p>
+        <!-- News -->
+        <section class="card">
+          <h2 class="section-title">News</h2>
+          <ul class="news">
+            <li><span class="date">Oct 2026</span><span>New preprint: <a href="https://arxiv.org/abs/2609.39466" target="_blank" rel="noopener">T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models</a> on arXiv.</span></li>
+            <li><span class="date">Sep 2026</span><span>Invited talk at YAMC 2026 (Turin), in the TDA mini-symposium I co-organized and chaired.</span></li>
+            <li><span class="date">Jul 2026</span><span>Best Poster Award at the London Geometry and Machine Learning Summer School (LOGML 2026).</span></li>
+            <li><span class="date">Feb 2026</span><span>Started a research visit at the University of Southampton with Dr Andersen Ang (until July 2026).</span></li>
+          </ul>
+        </section>
 
-        <h3 class="section-title" style="margin-top:16px">Research Interests</h3>
-        <div class="chips">
-          <span class="chip">Topological Data Analysis</span>
-          <span class="chip">Optimization</span>
-          <span class="chip">Computational Geometry</span>
-          <span class="chip">Machine Learning</span>
-          <span class="chip">Topological Machine Learning</span>
-        </div>
+        <!-- About -->
+        <section class="card">
+          <h2 class="section-title">About</h2>
+          <p>I am a PhD candidate at the Department of Mathematics, University of Bari Aldo Moro. My research focuses on topological data analysis, optimization, computational geometry, and machine learning. In 2026 I was a visiting research student at the University of Southampton (Electronics and Computer Science Department), working with Dr Andersen Ang.</p>
+          <p>PhD project: <strong>Topological Data Analysis and Optimization for Industrial Processes</strong> (D.M.117/23 co-financed by Pirelli Tyre S.p.A.)</p>
+        </section>
 
-        <h3 class="section-title" style="margin-top:16px">Online Profiles</h3>
-        <div class="chips">
-          <a class="chip" href="https://orcid.org/0009-0001-0270-5560" target="_blank">ORCID</a>
-          <a class="chip" href="https://www.scopus.com/authid/detail.uri?authorId=59360399400" target="_blank">Scopus</a>
-          <a class="chip" href="https://scholar.google.com/citations?user=Co1kw0IAAAAJ&hl=it&oi=ao" target="_blank">Google Scholar</a>
-          <a class="chip" href="https://www.linkedin.com/in/serena-de-benedictis/" target="_blank">LinkedIn</a>
-          <a class="chip" href="https://www.researchgate.net/profile/Serena-De-Benedictis" target="_blank">ResearchGate</a>
-        </div>
-      </section>
+        <!-- Research Experience -->
+        <section class="card">
+          <h2 class="section-title">Research Experience</h2>
+          <ul class="pub">
+            <li><strong>Visiting Research Student</strong>, University of Southampton, Electronics and Computer Science Department, UK (Feb 2026 – Jul 2026). Supervisor: Dr Andersen Ang. Developed T-ARC, a topology-aware clustering framework with convergence analysis (Best Poster Award, LOGML 2026).</li>
+            <li><strong>Visiting Researcher</strong>, Pirelli Digital Solution Center, Bari, Italy (Mar 2025 – Aug 2025). Low-rank dimensionality reduction methods for the analysis of tyre materials.</li>
+            <li><strong>Consultant Researcher</strong>, Pirelli Tyre S.p.A., Milan, Italy (Oct 2023 – present). Topological machine learning framework predicting tyre noise from tread pattern images.</li>
+          </ul>
+        </section>
 
-      <!-- Education -->
-      <section class="card">
-        <h3 class="section-title">Education</h3>
-        <ul class="pub">
-          <li><strong>PhD</strong> in Computer Science and Mathematics (2023–present) — University of Bari Aldo Moro. Fellowship D.M.117/23 co-financed by Pirelli Tyre S.p.A.</li>
-          <li><strong>Master’s Degree</strong> in Mathematics, specialization in Applied Mathematics and Finance Support (2023). Thesis: <em>Perspectives on the study of drugs by Persistent Homology</em>. Grade: 110/110 cum laude.</li>
-          <li><strong>Bachelor’s Degree</strong> in Mathematics (2021). Thesis: <em>Algorithms for the resolution of polynomial systems on finite fields and their applications in Cryptoanalysis</em>.</li>
-          <li>Scientific high school diploma, Liceo Scientifico Carlo Cafiero, Barletta (2016).</li>
-        </ul>
-      </section>
+        <!-- Education -->
+        <section class="card">
+          <h2 class="section-title">Education</h2>
+          <ul class="pub">
+            <li><strong>PhD</strong> in Computer Science and Mathematics (2023–present) — University of Bari Aldo Moro. Thesis: <em>Topological Data Analysis and Optimization for Industrial Processes</em>. Fellowship D.M.117/23 co-financed by Pirelli Tyre S.p.A.</li>
+            <li><strong>Master’s Degree</strong> in Mathematics, specialization in Applied Mathematics and Finance Support (2023). Thesis: <em>Perspectives on the study of drugs by Persistent Homology</em>. Grade: 110/110 cum laude.</li>
+            <li><strong>Bachelor’s Degree</strong> in Mathematics (2021). Thesis: <em>Algorithms for the resolution of polynomial systems on finite fields and their applications in Cryptoanalysis</em>.</li>
+            <li>Scientific high school diploma, Liceo Scientifico Carlo Cafiero, Barletta (2016).</li>
+          </ul>
+        </section>
 
-      <!-- Courses -->
-      <section class="card">
-        <h3 class="section-title">Attended Courses</h3>
-        <ul class="pub courses">
-          <li>Symbiotic AI: Improving the data quality and the algorithms – University di Bari Aldo Moro </li>
-          <li>Topological Persistence: Theory and applications - Università di Pisa </li>
-          <li>CT: Intelligenza artificiale Basata sui Dati - University of Bari Aldo Moro </li>
-          <li>Ethics and AI - online </li>
-          <li>Statistical tests and multiple testing – University of Bari Aldo Moro </li>
-          <li>Convex Analysis and Optimization - University of Bari Aldo Moro </li>
-          <li>24 CFU Certification in Pedagogical Disciplines and Teaching Methodologies (2020)</li>
-        </ul>
-      </section>
+        <!-- Scientific Publications -->
+        <section class="card">
+          <h2 class="section-title">Scientific Publications</h2>
+          <h4>Journal and conference papers</h4>
+          <ul class="pubs">
+            <li><span class="tag c">C</span><div>
+              <span class="ptitle">Unsupervised ROI Extraction in Medical Images via Persistent Homology</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, G. Gargano</span>
+              <span class="pvenue">Accepted for publication in YAMC 2026 Proceedings (Springer), 2026</span>
+            </div></li>
+            <li><span class="tag c">C</span><div>
+              <span class="ptitle">An Investigation of Topological Machine Learning in Industrial Domain: Application to Tyre Noise Prediction</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, N. Del Buono, E. Di Lascio, A. Rancati, N. Melas, G. Pece</span>
+              <span class="pvenue">2026 IEEE Conference on Artificial Intelligence (CAI), Granada, Spain, 2026</span>
+              <span class="plinks"><a href="https://ieeexplore.ieee.org/abstract/document/11536554" target="_blank" rel="noopener">IEEE</a></span>
+            </div></li>
+            <li><span class="tag c">C</span><div>
+              <span class="ptitle">Uncovering Lung Lesion Patterns in Computed Tomography Scans Through Topological Machine Learning</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, N. Del Buono</span>
+              <span class="pvenue">Image Analysis and Processing – ICIAP 2025 Workshops, LNCS vol. 16170, pp. 79–90, 2026</span>
+              <span class="plinks"><a href="https://doi.org/10.1007/978-3-032-11381-8_7" target="_blank" rel="noopener">DOI</a></span>
+            </div></li>
+            <li><span class="tag j">J</span><div>
+              <span class="ptitle">Enhanced MRI brain tumor detection and classification via topological data analysis and low-rank tensor decomposition</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, G. Gargano, G. Settembre</span>
+              <span class="pvenue">Journal of Computational Mathematics and Data Science, vol. 13, p. 100103, 2024</span>
+              <span class="plinks"><a href="https://doi.org/10.1016/j.jcmds.2024.100103" target="_blank" rel="noopener">DOI</a></span>
+            </div></li>
+          </ul>
+          <h4>Preprints and submitted</h4>
+          <ul class="pubs">
+            <li><span class="tag s">S</span><div>
+              <span class="ptitle">T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, A. Ang, N. Del Buono, F. Esposito, L. Selicato</span>
+              <span class="pvenue">arXiv preprint, 2026</span>
+              <span class="plinks"><a href="https://arxiv.org/abs/2609.39466" target="_blank" rel="noopener">arXiv</a></span>
+            </div></li>
+            <li><span class="tag s">S</span><div>
+              <span class="ptitle">Jordan‑Segmentable Masks: A Topology‑Aware definition for characterizing Binary Image Segmentation</span>
+              <span class="pauth"><b>S.G. De Benedictis</b>, A. Altavilla, N. Del Buono</span>
+              <span class="pvenue">Under major revision at Journal of Computational and Applied Mathematics, 2026</span>
+              <span class="plinks"><a href="https://arxiv.org/abs/2601.10577" target="_blank" rel="noopener">arXiv</a></span>
+            </div></li>
+          </ul>
+          <h4>Theses</h4>
+          <ul class="pubs">
+            <li><span class="tag t">T</span><div>
+              <span class="ptitle">Prospettive sullo studio di farmaci mediante Persistent Homology</span>
+              <span class="pauth"><b>S.G. De Benedictis</b></span>
+              <span class="pvenue">Master's thesis, University of Bari Aldo Moro, 2023</span>
+            </div></li>
+          </ul>
+        </section>
 
-      <!-- Summer Schools -->
-      <section class="card">
-        <h3 class="section-title">Attended Schools</h3>
-        <ul class="pub summer-schools">
-          <li>EWM-EMS Summer School: Stability in topological data analysis - June 30 - July 4, 2025, Institut Mittag-Leffler, Sweden</li>
-          <li>International Ph.D. Summer School Mathematics and Machine Learning for Image Analysis - June 4-12, 2024, University of Bologna, Italy </li>
-          <li>Spring School: Variational Analysis in Optimization and Control (NOPTA 2024) – April 8-12, 2024, University of Antwerp, Belgium </li>
-        </ul> 
-      </section>
+        <!-- Workshops & Conferences -->
+        <section class="card">
+          <h2 class="section-title">Workshops &amp; Conferences</h2>
+          <h4>Presented at</h4>
+          <ul class="pub">
+            <li><span class="badge inv">Invited</span>Young Applied Mathematicians Conference (YAMC 2026) – September 18–19, 2026, Turin, Italy. Mini-symposium “Topological Data Analysis: Theory, Computation and Learning Paradigms”. <em>“A Provably Stable Kernel-Based Anomaly Score via Multiparameter Persistent Homology”</em></li>
+            <li><span class="badge award">Best Poster</span>London Geometry and Machine Learning Summer School (LOGML 2026) – July 2026, London, UK. <em>“T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models”</em></li>
+            <li><span class="badge inv">Invited</span>NUMERA Workshop 2026 – June 15, 2026, Department of Mathematics, University of Bari Aldo Moro, Italy. <em>“T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models”</em></li>
+            <li>Vision Learning and Control (VLC) Conference 2026 – April 17, 2026, Axis Conference Centre, University of Southampton, UK. <em>“T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models”</em></li>
+            <li>Vision Learning and Control (VLC) Seminar Cycle (Seminar) – March 26, 2026, Electronics and Computer Science Department, University of Southampton, UK. <em>“Topological Data Analysis and Optimization for Industrial Processes”</em></li>
+            <li><span class="badge inv">Invited</span>XMaths Workshop 2025 – December 18–19, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
+            <li>Two-day Workshop on Computational Approaches for the Integration of Multi-Omics Data – December 11–12, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
+            <li>1st Workshop on Innovative Medical image Processing with AI-driven preCision Technologies (IMPACT 2025) – September 15, 2025, Sapienza University of Rome, Italy</li>
+            <li>PhD Days 2025 – July 11 and July 15, 2025, University of Bari Aldo Moro, Italy</li>
+            <li>EWM-EMS Summer School: Stability in topological data analysis - June 29 – July 4, 2025, Institut Mittag-Leffler, Sweden</li>
+            <li>Hidden structures in dynamical systems, optimization, and machine learning - May 19-23, 2025, Gran Sasso Scientific Institute (GSSI), L’Aquila, Italy</li>
+            <li>3rd Workshop of UMI Group Mathematics for AI and ML - January 29-31, 2025, University of Bari Aldo Moro, Italy</li>
+            <li>International Ph.D. Summer School Mathematics and Machine Learning for Image Analysis - June 4-12, 2024, University of Bologna, Italy</li>
+            <li>XMaths Workshop 2023 – December 20-21, 2023, University of Bari Aldo Moro, Italy</li>
+            <li>PRIMO Workshop 2023 – September 20-22, 2023, University of Bari Aldo Moro, Italy</li>
+          </ul>
+          <h4>Attended</h4>
+          <ul class="pub">
+            <li>INdAM Day 2025 – November 21, 2025, Dipartimento di Matematica, Università degli Studi di Bari Aldo Moro, Italy</li>
+            <li>Celebrating Women in Mathematics 7th edition – May 12, 2025, online</li>
+            <li>NAMATH: Workshop "Numerical Analysis: Models, Applications, and Theory" - June 5-6, 2025, University of Bari Aldo Moro, Italy</li>
+            <li>Learning on Graphs Conference 2024 – December 4-6, 2024, University of Siena, Italy</li>
+            <li>Quasimodo: Quantitative Models for Complex Systems – October 10-11, 2024, University of Bari Aldo Moro, Italy</li>
+            <li>Workshop 2024: Algorithms’ Impact on Artificial Intelligence - June 24-26, 2024, University of Bari Aldo Moro, Italy</li>
+            <li>Workshop on Nonsmooth Optimization and Applications (NOPTA 2024) – April 8-12, 2024, University of Antwerp, Belgium</li>
+          </ul>
+        </section>
 
-      <!-- Scientific Publications
-      <section class="card">
-        <h3 class="section-title">Scientific Publications</h3>
-        <ul class="pub">
-          <li>S.G. De Benedictis, A. Altavilla, N. Del Buono, <em>Jordan‑Segmentable Masks: A Topology‑Aware definition for characterizing Binary Image Segmentation</em>, arXiv preprint (2026). <a href="https://doi.org/10.48550/arXiv.2601.10577" target="_blank">arXiv DOI</a></li>
-          <li>S.G. De Benedictis, N. Del Buono, <em>Uncovering Lung Lesion Patterns in Computed Tomography Scans Through Topological Machine Learning</em>, in *Image Analysis and Processing – ICIAP 2025 Workshops*, Lecture Notes in Computer Science, Vol. 16170 (2026), pp. 79–90. <a href="https://doi.org/10.1007/978-3-032-11381-8_7" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, G. Gargano, G. Settembre, <em>Enhanced MRI brain tumor detection and classification via topological data analysis and low-rank tensor decomposition</em>, Journal of Computational Mathematics and Data Science, Vol. 13 (2024), p. 100103. <a href="https://doi.org/10.1016/j.jcmds.2024.100103" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, <em>Prospettive sullo studio di farmaci mediante Persistent Homology</em>, Internal Archive, University of Bari Aldo Moro, 2023.</li>
-        </ul>
-      </section> -->
+        <!-- Advanced Training -->
+        <section class="card">
+          <h2 class="section-title">Advanced Training</h2>
+          <h4>Schools</h4>
+          <ul class="pub">
+            <li>London Geometry and Machine Learning Summer School (LOGML 2026) - July 2026, London, UK</li>
+            <li>EWM-EMS Summer School: Stability in topological data analysis - June 29 - July 4, 2025, Institut Mittag-Leffler, Sweden</li>
+            <li>International Ph.D. Summer School Mathematics and Machine Learning for Image Analysis - June 4-12, 2024, University of Bologna, Italy</li>
+            <li>Spring School: Variational Analysis in Optimization and Control (NOPTA 2024) – April 8-12, 2024, University of Antwerp, Belgium</li>
+          </ul>
+          <h4>Courses</h4>
+          <ul class="pub">
+            <li>Symbiotic AI: Improving the data quality and the algorithms – University di Bari Aldo Moro</li>
+            <li>Topological Persistence: Theory and applications - Università di Pisa</li>
+            <li>CT: Intelligenza artificiale Basata sui Dati - University of Bari Aldo Moro</li>
+            <li>Ethics and AI - online</li>
+            <li>Statistical tests and multiple testing – University of Bari Aldo Moro</li>
+            <li>Convex Analysis and Optimization - University of Bari Aldo Moro</li>
+            <li>24 CFU Certification in Pedagogical Disciplines and Teaching Methodologies (2020)</li>
+          </ul>
+        </section>
 
-      <!-- Scientific Publications
-      <section class="card">
-        <h3 class="section-title">Scientific Publications</h3>
-        <ul class="pub">
-          <li>S.G. De Benedictis, N. Del Buono, E. Di Lascio, A. Rancati, N. Melas, G. Pece, <em>An Investigation of Topological Machine Learning in Industrial Domain: Application to Tyre Noise Prediction</em>, in *International Conference on Computational Intelligence and Applications (CAI 2026), IEEE SMC* (2026). <a href="https://ieeexplore.ieee.org/abstract/document/11536554" target="_blank">IEEE DOI</a></li>
-          <li>S.G. De Benedictis, A. Altavilla, N. Del Buono, <em>Jordan‑Segmentable Masks: A Topology‑Aware definition for characterizing Binary Image Segmentation</em>, arXiv preprint (2026). <a href="https://doi.org/10.48550/arXiv.2601.10577" target="_blank">arXiv DOI</a></li>
-          <li>S.G. De Benedictis, N. Del Buono, <em>Uncovering Lung Lesion Patterns in Computed Tomography Scans Through Topological Machine Learning</em>, in *Image Analysis and Processing – ICIAP 2025 Workshops*, Lecture Notes in Computer Science, Vol. 16170 (2026), pp. 79–90. <a href="https://doi.org/10.1007/978-3-032-11381-8_7" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, G. Gargano, G. Settembre, <em>Enhanced MRI brain tumor detection and classification via topological data analysis and low-rank tensor decomposition</em>, Journal of Computational Mathematics and Data Science, Vol. 13 (2024), p. 100103. <a href="https://doi.org/10.1016/j.jcmds.2024.100103" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, <em>Prospettive sullo studio di farmaci mediante Persistent Homology</em>, Internal Archive, University of Bari Aldo Moro, 2023.</li>
-        </ul>
-      </section> -->
+        <!-- Projects -->
+        <section class="card">
+          <h2 class="section-title">Projects</h2>
+          <ul class="pub">
+            <li><strong>INdAM - GNCS Project</strong>, “MODA: Integrating MOdel-based and DAta-Driven Methods for Multiscale Biological Systems”.</li>
+            <li><strong>Repurposing marine by-products</strong> for functional foods and bioactives to improve human health and sustainability.</li>
+          </ul>
+        </section>
 
-      <!-- Scientific Publications -->
-      <section class="card">
-        <h3 class="section-title">Scientific Publications</h3>
-        <ul class="pub">
-          <li>S.G. De Benedictis, N. Del Buono, E. Di Lascio, A. Rancati, N. Melas, G. Pece, <em>An Investigation of Topological Machine Learning in Industrial Domain: Application to Tyre Noise Prediction</em>, in International Conference on Computational Intelligence and Applications (CAI 2026), IEEE SMC (2026). <a href="https://ieeexplore.ieee.org/abstract/document/11536554" target="_blank">IEEE DOI</a></li>
-          <li>S.G. De Benedictis, A. Altavilla, N. Del Buono, <em>Jordan‑Segmentable Masks: A Topology‑Aware definition for characterizing Binary Image Segmentation</em>, arXiv preprint (2026). <a href="https://doi.org/10.48550/arXiv.2601.10577" target="_blank">arXiv DOI</a></li>
-          <li>S.G. De Benedictis, N. Del Buono, <em>Uncovering Lung Lesion Patterns in Computed Tomography Scans Through Topological Machine Learning</em>, in Image Analysis and Processing – ICIAP 2025 Workshops, Lecture Notes in Computer Science, Vol. 16170 (2026), pp. 79–90. <a href="https://doi.org/10.1007/978-3-032-11381-8_7" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, G. Gargano, G. Settembre, <em>Enhanced MRI brain tumor detection and classification via topological data analysis and low-rank tensor decomposition</em>, Journal of Computational Mathematics and Data Science, Vol. 13 (2024), p. 100103. <a href="https://doi.org/10.1016/j.jcmds.2024.100103" target="_blank">DOI</a></li>
-          <li>S.G. De Benedictis, <em>Prospettive sullo studio di farmaci mediante Persistent Homology</em>, Internal Archive, University of Bari Aldo Moro, 2023.</li>
-        </ul>
-      </section>
+        <!-- Memberships -->
+        <section class="card">
+          <h2 class="section-title">Memberships</h2>
+          <ul class="pub">
+            <li>Gruppo di Ricerca Mathematics in Data AnalysiS (MIDAS)</li>
+            <li>Istituto Nazionale di Alta Matematica (INDAM), GNCS</li>
+            <li>European Women in Mathematics (EWM)</li>
+            <li>PRIMO: Post-graduate Researchers in Inverse problems, ML and Optimization</li>
+          </ul>
+        </section>
 
-      <!-- Projects -->
-      <section class="card">
-        <h3 class="section-title">Projects</h3>
-        <ul class="pub">
-          <li><strong>INdAM - GNCS Project</strong>, “MODA: Integrating MOdel-based and DAta-Driven Methods for Multiscale Biological Systems”.</li>
-          <li><strong>Repurposing marine by-products</strong> for functional foods and bioactives to improve human health and sustainability. </li>
-        </ul>
-      </section>
+        <!-- Event Organization -->
+        <section class="card">
+          <h2 class="section-title">Event Organization</h2>
+          <ul class="pub">
+            <li>Co-organizer, AWM Special Session “Shaping Dynamical Systems: A Topological Data Analysis Perspective”, Joint Mathematics Meetings (JMM 2027), January 2027</li>
+            <li>Co-organizer and Chair, Mini-symposium “Topological Data Analysis: Theory, Computation and Learning Paradigms”, Young Applied Mathematicians Conference (YAMC 2026), Turin, September 2026</li>
+            <li>Technical Programme Committee, INSIGHT @ IEEE ICTS4eHealth 2026</li>
+            <li>XMaths Workshop 2024, Bari</li>
+            <li>3rd Workshop of UMI Group Mathematics for AI and ML, Bari, 2025</li>
+          </ul>
+        </section>
 
-      <!-- Workshops & Conferences
-      <section class="card">
-        <h3 class="section-title">Workshops & Conferences</h3>
-        <h4>Presented at:</h4>
-        <ul class="pub">
-          <li>XMaths Workshop 2025 – December 18–19, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
-          <li>Two-day Workshop on Computational Approaches for the Integration of Multi-Omics Data – December 11–12, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
-          <li>1st Workshop on Innovative Medical image Processing with AI-driven preCision Technologies (IMPACT 2025) – September 15, 2025, Sapienza University of Rome, Italy</li>
-          <li>PhD Days 2025 – July 11 and July 15, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>EWM-EMS Summer School: Stability in topological data analysis - June 29 – July 4, 2025, Institut Mittag-Leffler, Sweden</li>
-          <li>Hidden structures in dynamical systems, optimization, and machine learning - May 19-23, 2025, Gran Sasso Scientific Institute (GSSI), L’Aquila, Italy</li>
-          <li>3rd Workshop of UMI Group Mathematics for AI and ML - January 29-31, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>International Ph.D. Summer School Mathematics and Machine Learning for Image Analysis - June 4-12, 2024, University of Bologna, Italy </li>
-          <li>XMaths Workshop 2023 – December 20-21, 2023, University of Bari Aldo Moro, Italy</li>
-          <li>PRIMO Workshop 2023 – September 20-22, 2023, University of Bari Aldo Moro, Italy</li>
-        </ul>
-        <h4>Attended:</h4>
-        <ul class="pub">
-          <li>INdAM Day 2025 – November 21, 2025, Dipartimento di Matematica, Università degli Studi di Bari Aldo Moro, Italy</li>
-          <li>Celebrating Women in Mathematics 7th edition – May 12, 2025, online</li>
-          <li>NAMATH: Workshop "Numerical Analysis: Models, Applications, and Theory" - June 5-6, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>Learning on Graphs Conference 2024 – December 4-6, 2024, University of Siena, Italy</li>
-          <li>Quasimodo: Quantitative Models for Complex Systems – October 10-11, 2024, University of Bari Aldo Moro, Italy</li>
-          <li>Workshop 2024: Algorithms’ Impact on Artificial Intelligence - June 24-26, 2024, University of Bari Aldo Moro, Italy</li>
-          <li>Workshop on Nonsmooth Optimization and Applications (NOPTA 2024) – April 8-12, 2024, University of Antwerp, Belgium</li>
-        </ul>
-      </section> -->
+        <!-- Teaching -->
+        <section class="card">
+          <h2 class="section-title">Teaching</h2>
+          <ul class="pub">
+            <li>Teaching assistant, Computational Geometry (Prof. A. Altavilla), 15 hours, University of Bari, A.Y. 2023/24</li>
+            <li>Exam assistant, Geometry I and II, 9 hours, University of Bari, A.Y. 2024/25</li>
+          </ul>
+        </section>
 
-      <!-- Workshops & Conferences -->
-      <section class="card">
-        <h3 class="section-title">Workshops & Conferences</h3>
-        <h4>Presented at:</h4>
-        <ul class="pub">
-          <li>NUMERA Workshop 2026 (Invited Speaker) – June 15, 2026, Department of Mathematics, University of Bari Aldo Moro, Italy. <em>“T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models”</em></li>
-          <li>Vision Learning and Control (VLC) Conference 2026 – April 17, 2026, Axis Conference Centre, University of Southampton, UK. <em>“T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models”</em></li>
-          <li>Vision Learning and Control (VLC) Seminar Cycle (Seminar) – March 26, 2026, Electronics and Computer Science Department, University of Southampton, UK. <em>“Topological Data Analysis and Optimization for Industrial Processes”</em></li>
-          <li>XMaths Workshop 2025 (Invited Speaker) – December 18–19, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
-          <li>Two-day Workshop on Computational Approaches for the Integration of Multi-Omics Data – December 11–12, 2025, Department of Mathematics, University of Bari Aldo Moro, Italy</li>
-          <li>1st Workshop on Innovative Medical image Processing with AI-driven preCision Technologies (IMPACT 2025) – September 15, 2025, Sapienza University of Rome, Italy</li>
-          <li>PhD Days 2025 – July 11 and July 15, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>EWM-EMS Summer School: Stability in topological data analysis - June 29 – July 4, 2025, Institut Mittag-Leffler, Sweden</li>
-          <li>Hidden structures in dynamical systems, optimization, and machine learning - May 19-23, 2025, Gran Sasso Scientific Institute (GSSI), L’Aquila, Italy</li>
-          <li>3rd Workshop of UMI Group Mathematics for AI and ML - January 29-31, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>International Ph.D. Summer School Mathematics and Machine Learning for Image Analysis - June 4-12, 2024, University of Bologna, Italy </li>
-          <li>XMaths Workshop 2023 – December 20-21, 2023, University of Bari Aldo Moro, Italy</li>
-          <li>PRIMO Workshop 2023 – September 20-22, 2023, University of Bari Aldo Moro, Italy</li>
-        </ul>
-        <h4>Attended:</h4>
-        <ul class="pub">
-          <li>INdAM Day 2025 – November 21, 2025, Dipartimento di Matematica, Università degli Studi di Bari Aldo Moro, Italy</li>
-          <li>Celebrating Women in Mathematics 7th edition – May 12, 2025, online</li>
-          <li>NAMATH: Workshop "Numerical Analysis: Models, Applications, and Theory" - June 5-6, 2025, University of Bari Aldo Moro, Italy</li>
-          <li>Learning on Graphs Conference 2024 – December 4-6, 2024, University of Siena, Italy</li>
-          <li>Quasimodo: Quantitative Models for Complex Systems – October 10-11, 2024, University of Bari Aldo Moro, Italy</li>
-          <li>Workshop 2024: Algorithms’ Impact on Artificial Intelligence - June 24-26, 2024, University of Bari Aldo Moro, Italy</li>
-          <li>Workshop on Nonsmooth Optimization and Applications (NOPTA 2024) – April 8-12, 2024, University of Antwerp, Belgium</li>
-        </ul>
-      </section>
+        <!-- Reviewing -->
+        <section class="card">
+          <h2 class="section-title">Reviewing</h2>
+          <ul class="pub">
+            <li>Journal of Computational Mathematics and Data Science</li>
+            <li>IEEE Journal of Biomedical and Health Informatics</li>
+            <li>Special issue of the Young Applied Mathematicians Conference (YAMC 2026)</li>
+          </ul>
+        </section>
 
-      <!-- Memberships -->
-      <section class="card">
-        <h3 class="section-title">Memberships</h3>
-        <ul class="pub">
-          <li>Gruppo di Ricerca Mathematics in Data AnalysiS (MIDAS)</li>
-          <li>Istituto Nazionale di Alta Matematica (INDAM), GNCS</li>
-          <li>European Women in Mathematics (EWM)</li>
-        </ul>
-      </section>
+        <!-- Awards, Scholarships & Grants -->
+        <section class="card">
+          <h2 class="section-title">Awards, Scholarships &amp; Grants</h2>
+          <ul class="pub">
+            <li>Best Poster Award, London Geometry and Machine Learning Summer School (LOGML 2026)</li>
+            <li>Accommodation grant, LOGML Summer School (2026)</li>
+            <li>Accommodation and travel grants, EWM-EMS Summer School “Stability in Topological Data Analysis”, Institut Mittag-Leffler (2025)</li>
+            <li>PhD Scholarship (2023–2026), D.M.117/23</li>
+            <li>High School Grant for language study in Cambridge, UK (2015)</li>
+          </ul>
+        </section>
 
-      <!-- Event Organization -->
-      <section class="card">
-        <h3 class="section-title">Event Organization</h3>
-        <ul class="pub">
-          <li>XMaths Workshop 2024, Bari</li>
-          <li>3rd Workshop of UMI Group Mathematics for AI and ML, Bari, 2025</li>
-        </ul>
-      </section>
-
-      <!-- Scholarships & Grants -->
-      <section class="card">
-        <h3 class="section-title">Scholarships & Grants</h3>
-        <ul class="pub">
-          <li>Grant for Summer School “Stability in Topological Data Analysis”, Mittag-Leffler Institute, EMS, EWM (2024)</li>
-          <li>PhD Scholarship (2023–2026), D.M.117/23</li>
-          <li>High School Grant for language study in Cambridge, UK (2015)</li>
-        </ul>
-      </section>
+      </main>
 
       <!-- Sidebar -->
       <aside>
         <div class="card">
           <h3 class="section-title">Contact</h3>
-          <p><strong>Academic Email:</strong> <a href="mailto:serena.debenedictis@uniba.it">serena.debenedictis@uniba.it</a></p>
-          <p><strong>Address:</strong> Room 16, Dept. of Mathematics,<br>Via E. Orabona, 4, Bari, Italy</p>
-          <p><a href="https://sites.google.com/view/midasresearchgroup/people/serena-de-benedictis" target="_blank" rel="noopener">Lab Profile</a></p>
+          <p><span class="side-label">Academic email</span><a href="mailto:serena.debenedictis@uniba.it">serena.debenedictis@uniba.it</a></p>
+          <p><span class="side-label">Address</span>Room 16, Dept. of Mathematics<br>Via E. Orabona, 4, Bari, Italy</p>
         </div>
 
         <div class="card">
-          <h3 class="section-title">Skills</h3>
-          <p><strong>Programming:</strong> Python, Matlab, LaTeX</p>
-          <p><strong>Languages:</strong><br>Italian (native)<br>English (B2, Cambridge Certification)<br>Duolingo English Test: 130/160 (2025)</p>
+          <h3 class="section-title">Research Interests</h3>
+          <div class="chips">
+            <span class="chip">Topological Data Analysis</span>
+            <span class="chip">Topological Machine Learning</span>
+            <span class="chip">Optimization</span>
+            <span class="chip">Computational Geometry</span>
+            <span class="chip">Machine Learning</span>
+            <span class="chip">Industrial Machine Learning</span>
+            <span class="chip">Data Science</span>
+            <span class="chip">Predictive Modeling</span>
+            <span class="chip">Computer Vision</span>
+          </div>
         </div>
-      </aside>
 
-    </main>
+      </aside>
+    </div>
 
     <footer>
-      <p>Made by Serena Grazia De Benedictis</p>
+      <p>Serena Grazia De Benedictis · Last updated October 2026</p>
     </footer>
 
   </div>
